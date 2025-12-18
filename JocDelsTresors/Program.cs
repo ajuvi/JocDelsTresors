@@ -25,7 +25,7 @@
             bool finalJoc = false;
 
             PintarFonsPantalla();
-            DrawBox(0, 0, AMPLADA, ALCADA, $"AGAFA EL TRESOR | PUNTS: {punts}");
+            MostrarText(0, 0, $"AGAFA EL TRESOR | PUNTS: {punts}");
             PintarAvatar(cTresor, COLOR_TRESOR);
             PintarAvatar(cPlayer, COLOR_PLAYER);
 
@@ -44,14 +44,15 @@
                     Console.Beep(440, 300);
                 }
 
+                // valorar el final de joc
+                finalJoc = punts >= PUNTS_GUANYADOR || tecla == ConsoleKey.Escape;
+
                 // pintar l'escenari
                 PintarFonsPantalla();
-                DrawBox(0, 0, AMPLADA, ALCADA, $"AGAFA EL TRESOR | PUNTS: {punts}");
+                MostrarText(0,0,$"AGAFA EL TRESOR | PUNTS: {punts}");
                 PintarAvatar(cTresor, COLOR_TRESOR);
                 PintarAvatar(cPlayer, COLOR_PLAYER);
 
-                // valorar el final de joc
-                finalJoc = punts >= PUNTS_GUANYADOR || tecla == ConsoleKey.Escape;
             }
 
             PintarFonsPantalla();
@@ -101,7 +102,14 @@
             Console.BackgroundColor = colorAnterior;
         }
 
-        public static void DrawBox(int x, int y, int width, int height, string title)
+        static void MostrarText(int x, int y, string title)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write(title);
+        }
+
+        //no utilitzat
+        static void DrawBox(int x, int y, int width, int height, string title)
         {
             // Desa el color original per restaurar-lo després
             var originalColor = Console.ForegroundColor;
