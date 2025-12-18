@@ -56,11 +56,10 @@
             }
 
             PintarFonsPantalla();
-            Console.SetCursorPosition(AMPLADA / 3, ALCADA / 2);
             if (punts == PUNTS_GUANYADOR)
-                Console.WriteLine("HAS GUANYAT!");
+                MostrarText(AMPLADA / 3, ALCADA / 2, "HAS GUANYAT!");
             else
-                Console.WriteLine("HAS MARXAT?");
+                MostrarText(AMPLADA / 3, ALCADA / 2, "HAS MARXAT?");
 
             Console.ReadKey();
         }
