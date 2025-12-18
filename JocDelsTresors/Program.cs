@@ -25,7 +25,7 @@
             bool finalJoc = false;
 
             PintarFonsPantalla();
-            MostrarText(0, 0, $"AGAFA EL TRESOR | PUNTS: {punts}");
+            MostrarText(0, 0, $"AGAFA EL TRESOR | PUNTS: {punts} / {PUNTS_GUANYADOR}");
             PintarAvatar(cTresor, COLOR_TRESOR);
             PintarAvatar(cPlayer, COLOR_PLAYER);
 
@@ -49,7 +49,7 @@
 
                 // pintar l'escenari
                 PintarFonsPantalla();
-                MostrarText(0,0,$"AGAFA EL TRESOR | PUNTS: {punts}");
+                MostrarText(0,0,$"AGAFA EL TRESOR | PUNTS: {punts} / {PUNTS_GUANYADOR}");
                 PintarAvatar(cTresor, COLOR_TRESOR);
                 PintarAvatar(cPlayer, COLOR_PLAYER);
 
